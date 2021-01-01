@@ -27,7 +27,7 @@ import javax.persistence.MappedSuperclass;
  * needing this property.
  *
  * @author Ken Krebs
- * @author Juergen Hoeller
+ * @author Juergen Hoeller 
  */
 @MappedSuperclass
 public class BaseEntity implements Serializable {
