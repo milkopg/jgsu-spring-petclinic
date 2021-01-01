@@ -1,0 +1,33 @@
+sudo docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+#docker-compose
+cd /home/ubuntu/git/training/jenkins/getting_started/course-jenkins-getting-started/dockers/compose
+sudo docker-compose up
+
+cd  /home/ubuntu/git/training/jenkins/getting_started/jenkins_job/jgsu-spring-petclinic
+mvn clean install
+java -Dserver.port=8081 -jar target/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar
+
+#run jenkins with pipeline
+cd /home/ubuntu/git/training/jenkins/getting_started/course-jenkins-getting-started/pipeline
+sudo docker-compose up
+
+#id of docker
+43e596a522f64440a27aba3c3c387403
+
+#enter docker container
+sudo docker-compose exec jenkins bash
+
+cd /var/jenkins_home/jobs/spc
+
+cat config.xml 
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.40">
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <triggers/>
+  <disabled>false</disabled>
+
+
+#usefull jenkins shortcuts
+https://ace.c9.io/demo/keyboard_shortcuts.html
